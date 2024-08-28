@@ -1,0 +1,63 @@
+On 28th August,2024.
+Topic: Inheritance in Kotlin
+
+Theory:
+we use 'open' keyword to make a class as public, for overriding a function we use open keyword and in derived class we write override keyword
+
+
+Execution:
+
+Q1) Find the area of Rectangle, square using inheritance and override the display function ?
+
+open class Rectangle(var a:Double, var b:Double){          //we use open keyword to make a class it public
+     fun area():Double{                                   // define a function without passing parameters and return double
+         return a*b ;
+     }
+   /*   fun area(a:Double,b:Double):Double{
+          this.length=a;
+          this.breadth=b;
+         return a*b;
+        } */
+
+
+     open fun display(){           // override keyword is used when we override a function
+
+         println("The area of rectangle with $a and $b is ${area()}");  //we use ${area()} when we write a function and $a to write a variable
+     }
+
+    }
+
+class square(var s:Double):Rectangle(s,s){  // when you define a base class, pass the same values to the parent class. here a is the length and it is passed to rectangle also.
+
+    override fun display(){.         //to override a function we use override keyword
+        println("The area of square with $a and $b is ${area()}");
+    }
+
+}
+fun main(){
+    var x=Rectangle(5.00,8.00);
+    var y=square(10.0);
+    var z=Fact(10);
+    x.display();
+    y.display();
+    z.dis();
+   
+
+}
+
+//Write a program recurrsion to find the factorial of a number
+class Fact(var t:Int) {
+    fun fact(t: Int): Int {
+        if (t == 1) {
+            return 1;
+        }
+        if (t==0){
+            return 0;
+        }
+        return t * (fact(t - 1));
+    }
+
+    fun dis() {
+        println("Factorial of $t is ${fact(4)}");
+    }
+}
